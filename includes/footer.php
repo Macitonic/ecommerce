@@ -45,13 +45,13 @@
           <h2>Customer Service</h2>
           <p>Contact Us</p>
           <p>FAQ</p>
-          <p>Shipping & Returns</p>
+          <p>Delivery & Exchange Policy</p>
           <p>Terms & Conditions</p>
           <p>Privacy Policy</p>
         </div>
 
         <div class="contact-sec4">
-          <h2>Contact Us:</h2>
+          <h2>Contact Us :</h2>
           <p>
             <span
               ><img
