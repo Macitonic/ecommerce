@@ -1,0 +1,10 @@
+
+Fatal error: Uncaught mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`ecommerce`.`order_items`, CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)) in C:\XAMPP\htdocs\ecomerce\admin\delete_product.php:4 Stack trace: #0 C:\XAMPP\htdocs\ecomerce\admin\delete_product.php(4): mysqli->query('DELETE FROM pro...') #1 {main} thrown in C:\XAMPP\htdocs\ecomerce\admin\delete_product.php on line 4	
+solution: use on delete cascade to solve the foreign key constrait by making sure the items in the childtable are also deleted
+alter table table_name
+drop foreign key column name;
+
+alter table table_name
+add constraint column name
+foreign key (name_of_column in current table) refereces (name_of_table and column referenced)
+on delete cascade;
