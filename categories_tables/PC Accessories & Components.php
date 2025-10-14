@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PC Accessories & Components</title>
     <style>
-        .laptop-card {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/1200x/f5/ce/07/f5ce078e5112d477ba9edfbcc53d7870.jpg") no-repeat center/cover;
+        .pc-card {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/736x/fc/3a/55/fc3a55f86721f27a8f0aa51ddb40ee9b.jpg") no-repeat center/cover;
             width: 190px;
             height: 250px;
             border: 1px solid transparent;
@@ -16,8 +16,8 @@
             transition: all 0.1s ease;
         }
 
-        .laptop-card:hover {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/1200x/f5/ce/07/f5ce078e5112d477ba9edfbcc53d7870.jpg") no-repeat center/cover;
+        .pc-card:hover {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/736x/fc/3a/55/fc3a55f86721f27a8f0aa51ddb40ee9b.jpg") no-repeat center/cover;
             width: 192px;
             height: 252px;
             border: 1px solid transparent;
@@ -49,6 +49,7 @@
 
         h2{
             margin: 50% auto;
+            text-align: center;
         }
         a{
             text-decoration: none;
@@ -57,10 +58,10 @@
 </head>
 
 <body>
-    <a href="categories_tables/display/laptops_display.php">
-        <div class="laptop-card">
+    <a href="#">
+        <div class="pc-card">
             <div class="card-content">
-                <h2>Laptops</h2>
+                <h2>PC Accessories & Components</h2>
             </div>
         </div>
     </a>

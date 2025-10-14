@@ -24,8 +24,8 @@
     }
 
     body {
-      background: #fff;
-      color: #222;
+      background: #1A1A1A;
+      color: #fff;
       font-family: var(--font-primary);
     }
 
@@ -43,7 +43,7 @@
       width: 100%;
       min-height: 100vh;
       padding: 3.5rem 3% 5rem;
-      margin: 0 3% 3%;
+      margin: 0 3% 1%;
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
@@ -127,6 +127,18 @@
       margin-top: 3%;
       font-size: 0.85rem;
     }
+
+    /*categories*/
+
+    .categories{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      width: 100%;
+      padding: 3.5rem 3% 5rem;
+      margin: 0 3% 3%;
+    }
   </style>
 </head>
 
@@ -160,12 +172,12 @@
   </section>
 
   <!--category List-->
-  <div>
-    <?php
-    
-    
-    ?>
-  </div>
+  <section class="categories">
+    <div><?php include 'categories_tables/laptops.php'; ?></div>
+    <div><?php include 'categories_tables/headphones.php'; ?></div>
+    <div><?php include 'categories_tables/smartwatch.php'; ?></div> 
+    <div><?php include 'categories_tables/PC Accessories & Components.php'; ?></div> 
+  </section>
   <!--Products List-->
   <div class="row">
     <?php
