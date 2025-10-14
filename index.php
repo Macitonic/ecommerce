@@ -160,6 +160,12 @@
   </section>
 
   <!--category List-->
+  <div>
+    <?php
+    
+    
+    ?>
+  </div>
   <!--Products List-->
   <div class="row">
     <?php
