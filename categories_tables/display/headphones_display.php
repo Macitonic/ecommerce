@@ -126,7 +126,7 @@
             font-size: 0.92rem;
         }
 
-        img {
+        .image {
             width: 100%;
             height: 150px;
             object-fit: fill;
