@@ -58,7 +58,7 @@
 </head>
 
 <body>
-    <a href="#">
+    <a href="categories_tables/display/headphones_display.php">
         <div class="headphones-card">
             <div class="card-content">
                 <h2>Headphones</h2>

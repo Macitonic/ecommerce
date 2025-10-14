@@ -48,7 +48,7 @@
             margin: 0 3% 1%;
         }
 
-        .card {
+        .pc-card {
             background-color: rgba(34, 13, 13, 0.85);
             width: 200px;
             height: 350px;
@@ -58,7 +58,7 @@
             transition: all 0.1s ease;
         }
 
-        .card:hover {
+        .pc-card:hover {
             width: 201px;
             height: 352px;
             border: 1px solid transparent;
@@ -139,10 +139,10 @@
     <?php include 'includes/navbar.php'; ?>
     <div class="card-container">
         <?php
-        $results = $conn->query('SELECT * FROM laptops');
+        $results = $conn->query('SELECT * FROM pc');
         while ($row = $results->fetch_assoc()) {
         ?>
-            <div class="card">
+            <div class="pc-card">
                 <div class="image">
                     <img src="https://i.pinimg.com/736x/fd/3f/c7/fd3fc71cf6257839ca007b9c39803aae.jpg" alt="laptop">
                 </div>

@@ -58,7 +58,7 @@
 </head>
 
 <body>
-    <a href="#">
+    <a href="categories_tables/display/pc_display.php">
         <div class="pc-card">
             <div class="card-content">
                 <h2>PC Accessories & Components</h2>

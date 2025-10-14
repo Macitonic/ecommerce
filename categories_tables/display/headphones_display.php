@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="assets\css\styles.css" />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
     <style>
         :root {
             --font-primary: "Roboto", sans-serif;
@@ -48,7 +48,7 @@
             margin: 0 3% 1%;
         }
 
-        .card {
+        .headphones-card {
             background-color: rgba(34, 13, 13, 0.85);
             width: 200px;
             height: 350px;
@@ -58,7 +58,7 @@
             transition: all 0.1s ease;
         }
 
-        .card:hover {
+        .headphones-card:hover {
             width: 201px;
             height: 352px;
             border: 1px solid transparent;
@@ -136,13 +136,13 @@
 </head>
 
 <body>
-    <?php include 'includes/navbar.php'; ?>
+    <?php include '../../includes/navbar.php'; ?>
     <div class="card-container">
         <?php
-        $results = $conn->query('SELECT * FROM laptops');
+        $results = $conn->query('SELECT * FROM headphones');
         while ($row = $results->fetch_assoc()) {
         ?>
-            <div class="card">
+            <div class="headphones-card">
                 <div class="image">
                     <img src="https://i.pinimg.com/736x/fd/3f/c7/fd3fc71cf6257839ca007b9c39803aae.jpg" alt="laptop">
                 </div>
@@ -155,8 +155,8 @@
             </div>
         <?php }; ?>
     </div>
-    <?php include 'includes/footer.php'; ?>
-    <script src="assets/js/main.js"></script>
+    <?php include '../../includes/footer.php'; ?>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

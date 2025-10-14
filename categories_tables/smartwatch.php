@@ -57,7 +57,7 @@
 </head>
 
 <body>
-    <a href="#">
+    <a href="categories_tables/display/smartwatch_display.php">
         <div class="smartwatch-card">
             <div class="card-content">
                 <h2>Watches</h2>
