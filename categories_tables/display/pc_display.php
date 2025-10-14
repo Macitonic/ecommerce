@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="assets\css\styles.css" />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
     <style>
         :root {
             --font-primary: "Roboto", sans-serif;
@@ -45,12 +45,13 @@
             max-width: 1200px;
             width: 100%;
             padding: 3.5rem 3% 5rem;
-            margin: 0 3% 1%;
+            margin: 0 auto;
         }
 
         .pc-card {
             background-color: rgba(34, 13, 13, 0.85);
-            width: 200px;
+            width: 100%;
+            max-width: 220px;
             height: 350px;
             border: 1px solid transparent;
             border-radius: 20px 10px 10px 20px;
@@ -59,7 +60,8 @@
         }
 
         .pc-card:hover {
-            width: 201px;
+            width: 100%;
+            max-width: 221px;
             height: 352px;
             border: 1px solid transparent;
             border-radius: 20px 10px 10px 20px;
@@ -126,7 +128,7 @@
             font-size: 0.92rem;
         }
 
-        img {
+        .image img {
             width: 100%;
             height: 150px;
             object-fit: fill;
@@ -136,7 +138,7 @@
 </head>
 
 <body>
-    <?php include 'includes/navbar.php'; ?>
+    <?php include '../../includes/navbar.php'; ?>
     <div class="card-container">
         <?php
         $results = $conn->query('SELECT * FROM pc');
@@ -155,8 +157,8 @@
             </div>
         <?php }; ?>
     </div>
-    <?php include 'includes/footer.php'; ?>
-    <script src="assets/js/main.js"></script>
+    <?php include '../../includes/footer.php'; ?>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

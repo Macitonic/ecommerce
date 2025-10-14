@@ -45,12 +45,13 @@
             max-width: 1200px;
             width: 100%;
             padding: 3.5rem 3% 5rem;
-            margin: 0 3% 1%;
+            margin: 0 auto;
         }
 
         .headphones-card {
             background-color: rgba(34, 13, 13, 0.85);
-            width: 200px;
+            width: 100%;
+            max-width: 220px;
             height: 350px;
             border: 1px solid transparent;
             border-radius: 20px 10px 10px 20px;
@@ -59,7 +60,8 @@
         }
 
         .headphones-card:hover {
-            width: 201px;
+            width: 100%;
+            max-width: 221px;
             height: 352px;
             border: 1px solid transparent;
             border-radius: 20px 10px 10px 20px;
@@ -126,7 +128,7 @@
             font-size: 0.92rem;
         }
 
-        .image {
+        .image img {
             width: 100%;
             height: 150px;
             object-fit: fill;
