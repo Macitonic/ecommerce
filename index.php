@@ -24,8 +24,8 @@
     }
 
     body {
-      background: #1A1A1A;
-      color: #fff;
+      background: #fff;
+      color: #000;
       font-family: var(--font-primary);
     }
 
@@ -130,7 +130,7 @@
 
     /*categories*/
 
-    .categories{
+    .categories {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
@@ -138,6 +138,105 @@
       width: 100%;
       padding: 3.5rem 3% 5rem;
       margin: 0 3% 3%;
+    }
+
+    /*====featured products====*/
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      padding: 2rem;
+      max-width: 1200px;
+      width: 100%;
+      padding: 3.5rem 3% 5rem;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: rgba(34, 13, 13, 0.85);
+      max-width: 220px;
+      width: 100%;
+      height: 350px;
+      border: 1px solid transparent;
+      border-radius: 20px 10px 10px 20px;
+      box-shadow: 1px 1px 1.8px grey, -1px -1px 1.8px grey;
+      transition: all 0.1s ease;
+    }
+
+    .card:hover {
+      width: 100%;
+      max-width: 221px;
+      height: 352px;
+      border: 1px solid transparent;
+      border-radius: 20px 10px 10px 20px;
+      box-shadow: 1.2px 1.2px 1.8px grey, -1.2px -1.2px 1.8px grey;
+
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      color: rgba(245, 245, 245, 0.95);
+      transition: all 0.1s ease;
+
+    }
+
+    .card-content:hover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+      color: rgba(254, 254, 254, 1);
+    }
+
+    .card-content h2 {
+      font-size: 1rem;
+      margin: 12px;
+      text-align: left;
+
+    }
+
+
+    .card-content p {
+      font-size: 0.9rem;
+      margin: 0 0 14px 12px;
+      text-align: left;
+
+    }
+
+    .card-content button {
+      width: 120px;
+      height: 28px;
+      margin-left: 12px;
+      background-color: #c07e03ff;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 700;
+      transition: all 0.1s ease;
+      font-size: 0.9rem;
+    }
+
+    .card-content button:hover {
+      width: 122px;
+      height: 30px;
+      margin-left: 12px;
+      background-color: #c07e03ff;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 750;
+      font-size: 0.92rem;
+    }
+
+    .image img {
+      width: 100%;
+      height: 150px;
+      object-fit: fill;
+      border-radius: 20px 10px 0 0;
     }
   </style>
 </head>
@@ -175,26 +274,47 @@
   <section class="categories">
     <div><?php include 'categories_tables/laptops.php'; ?></div>
     <div><?php include 'categories_tables/headphones.php'; ?></div>
-    <div><?php include 'categories_tables/smartwatch.php'; ?></div> 
-    <div><?php include 'categories_tables/PC Accessories & Components.php'; ?></div> 
+    <div><?php include 'categories_tables/smartwatch.php'; ?></div>
+    <div><?php include 'categories_tables/PC Accessories & Components.php'; ?></div>
   </section>
   <!--Products List-->
-  <div class="row">
+  <div class="card-container">
     <?php
-    $result = $conn->query("SELECT * FROM products");
-    while ($row = $result->fetch_assoc()) {
+    $results = $conn->query('SELECT * FROM featured_products');
+    while ($row = $results->fetch_assoc()) {
     ?>
-      <div class="col-md-3">
-        <div class="card mb-4">
-          <img src="<?php echo $row['image']; ?>" class="card-img-top" style="height:200px; object-fit:cover;">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo $row['name']; ?></h5>
-            <p>Ksh <?php echo $row['price']; ?></p>
-            <a href="cart.php?add=<?php echo $row['id']; ?>" class="btn btn-success btn-sm">Add to Cart</a>
-          </div>
+      <div class="card">
+        <div class="image">
+          <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+        </div>
+        <div class="card-content">
+          <h2><?php echo $row['name'] ?></h2>
+          <p><?php echo $row['description'] ?></p>
+          <p>ksh.<?php echo $row['price'] ?></p>
+          <button>Add to Cart</button>
         </div>
       </div>
-    <?php } ?>
+    <?php }; ?>
+  </div>
+
+  <!--New Arrivals-->
+  <div class="card-container">
+    <?php
+    $results = $conn->query('SELECT * FROM new_arrivals');
+    while ($row = $results->fetch_assoc()) {
+    ?>
+      <div class="card">
+        <div class="image">
+          <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+        </div>
+        <div class="card-content">
+          <h2><?php echo $row['name'] ?></h2>
+          <p><?php echo $row['description'] ?></p>
+          <p>ksh.<?php echo $row['price'] ?></p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    <?php }; ?>
   </div>
   <?php include 'includes/footer.php'; ?>
   <script src="assets/js/main.js"></script>
