@@ -266,11 +266,9 @@
     .ads {
       max-width: 1200px;
       width: 100%;
-      height: auto;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+      justify-content: center;
+      gap: 10px;
       margin: 0 auto 3%;
     }
 
@@ -279,17 +277,49 @@
     }
 
     .ad {
-      min-width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 250px;
       width: 100%;
-      max-height: 350px;
+      min-height: 250px;
       height: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/1200x/77/f4/42/77f4420a876c94d75a7687491b5b1e62.jpg") no-repeat center/cover;
+      border-bottom: 1px solid #f39d00;
+      border-radius: 10px;
+
     }
 
     .add-inner {
       display: flex;
       flex-direction: column;
-      gap: 60px;
+      align-items: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      gap: 50px;
+    }
+
+    .p1 {
+      font-size: 18px;
+      color: #ccd1c7ff;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .ad-inner h2 {
+      color: #fff;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .ad-inner span{
+      color: #d41010ff; 
+      
+    }
+
+    .p2{
+      color: #fff;
+      text-align: center;
     }
   </style>
 </head>
@@ -379,22 +409,33 @@
 
   <!--Ad section-->
   <section class="ads">
-    <div class="ad">
+    <div class="ad" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/1200x/77/f4/42/77f4420a876c94d75a7687491b5b1e62.jpg') no-repeat center/cover;">
       <div class="ad-inner">
-        <p style="font-size: 15px; color: #ccd1c7ff; text-align:center;">Limited Time Offer</p>
-        <h2 style="color: #fff; font-size: 1.8rem; text-align:center;">Laptop Collection</h2>
-        <p style="color: #fff;">Up to <span style="color: #d41010ff; text-align:center;">50%</span> off on selected items</p>
+        <p class="p1">Limited Time Offer</p>
+        <h2>Laptop Collection</h2>
+        <p class="p2">Up to <span>50%</span> off on selected items</p>
       </div>
-
     </div>
-    <div class="ad-inner">
-      <div class="ad">
-        <p style="font-size: 15px; color: #ccd1c7ff; text-align:center;">Trending</p>
-        <h2 style="color: #fff; font-size:1.8rem; text-align:center;">Watch Collection</h2>
-        <p style="color: #fff;">Up to <span style="color: #d41010ff; text-align:center;">30%</span> off on selected items</p>
+
+    <div class="ad" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/736x/5d/58/a9/5d58a98dd1f1bca98643bd10c8ec9e13.jpg') no-repeat center/cover;">
+      <div class="ad-inner">
+        <p class="p1">Trending</p>
+        <h2>Watch Collection</h2>
+        <p class="p2">Up to <span style="color: #d41010ff; text-align:center;">30%</span> off on selected items</p>
       </div>
     </div>
   </section>
+
+    <!--Testmonials section-->
+    <section class="testmonials">
+      <h1>What our customers say about us</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eligendi voluptas esse sunt</p>
+      <div class="testmonials-cards">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
   <?php include 'includes/footer.php'; ?>
   <script src="assets/js/main.js"></script>
 </body>
