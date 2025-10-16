@@ -238,6 +238,13 @@
       object-fit: fill;
       border-radius: 20px 10px 0 0;
     }
+
+    .banner{
+      max-width: 1200px;
+      width: 100%;
+      height: 70px;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://i.pinimg.com/736x/40/95/f7/4095f7508cc1bf95298871f0c4b2eb38.jpg") no-repeat center/cover;
+    }
   </style>
 </head>
 
@@ -316,6 +323,14 @@
       </div>
     <?php }; ?>
   </div>
+
+  <!--banner-->
+      <section class="banner">
+        <div>
+          <h2>#Shop our Premium collection</h2>
+        </div>
+      </section>
+
   <?php include 'includes/footer.php'; ?>
   <script src="assets/js/main.js"></script>
 </body>
