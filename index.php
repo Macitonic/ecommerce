@@ -38,7 +38,7 @@
     }
 
     .hero {
-      background: url("https://i.pinimg.com/736x/9b/92/aa/9b92aa2780d8ac753f7f1bb05fc11f53.jpg") no-repeat center/cover;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://i.pinimg.com/736x/95/fc/85/95fc853a0d4af8cf0ccbf90e7673fa96.jpg") no-repeat center/cover;
       max-width: 1200px;
       width: 100%;
       min-height: 100vh;
@@ -242,14 +242,13 @@
 
     .banner {
       max-width: 1200px;
-      width: 100%;
       height: 120px;
       background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.pinimg.com/736x/40/95/f7/4095f7508cc1bf95298871f0c4b2eb38.jpg") no-repeat center/cover;
       border: 1px solid #f39d00;
       border-radius: 15px;
       max-width: 1200px;
       width: 100%;
-      margin: 3% auto;
+      margin: 3%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -269,7 +268,7 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      margin: 0 auto 3%;
+      margin: 3%;
     }
 
     .ad-inner>* {
@@ -311,15 +310,64 @@
       text-align: center;
       margin-bottom: 10px;
     }
-    
-    .ad-inner span{
-      color: #d41010ff; 
-      
+
+    .ad-inner span {
+      color: #d41010ff;
+
     }
 
-    .p2{
+    .p2 {
       color: #fff;
       text-align: center;
+    }
+
+    .testmonials {
+      margin: 2% 3%;
+      padding: 2rem 1rem;
+
+    }
+
+    .testmonials h1 {
+      text-align: center;
+      border-bottom: 20px;
+    }
+
+    .testmonials-content p {
+      text-align: center;
+      margin-bottom: 60px;
+      line-height: 1.5rem;
+    }
+
+    .testmonials-cards-container {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 1% auto;
+      padding: 0 1.5rem;
+    }
+
+    .testmonials-cards{
+      background: rgba(22, 7, 7, 0.95);
+      color: #fff;
+      width: 100%;
+      height: auto;
+      padding: 1.2rem;
+      border: 1px solid #f39d00;
+      border-radius: 10px;
+    }
+
+    .testmonials-cards p{
+      line-height: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .testmonials-cards img{
+      border-radius: 100%;
+      margin-right: 20px;
+      
     }
   </style>
 </head>
@@ -426,16 +474,30 @@
     </div>
   </section>
 
-    <!--Testmonials section-->
-    <section class="testmonials">
+  <!--Testmonials section-->
+  <section class="testmonials">
+    <div class="testmonials-content">
       <h1>What our customers say about us</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eligendi voluptas esse sunt</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eligendi voluptas esse sunt Dolorum earum, <br>omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat</p>
+    </div>
+    <div class="testmonials-cards-container">
       <div class="testmonials-cards">
-        <div></div>
-        <div></div>
-        <div></div>
+        <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
+        <p><img src="https://i.pinimg.com/1200x/97/e1/59/97e159c6c2dcb7d9d0c455e1a4e6287d.jpg" alt="Customer" width="100px" height="50px">Sarah Johnson</p>
       </div>
-    </section>
+      <div class="testmonials-cards">
+        <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
+        <p><img src="https://i.pinimg.com/1200x/3e/f3/50/3ef350dc86cc82a092463e5d795654b5.jpg" alt="customer" width="100px" height="50px">Ben Kyle</p>
+      </div>
+      <div class="testmonials-cards">
+        <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
+        <p><img src="https://i.pinimg.com/736x/b4/1f/db/b41fdb180c124f3f3f8e2791e0019715.jpg" alt="customer" width="100px" height="50px">Brian Davis</p>
+      </div>
+    </div>
+  </section>
   <?php include 'includes/footer.php'; ?>
   <script src="assets/js/main.js"></script>
 </body>
