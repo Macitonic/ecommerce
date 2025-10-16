@@ -250,12 +250,42 @@
       max-width: 1200px;
       width: 100%;
       margin: 3% auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 1.5rem;
     }
 
     .banner h2 {
-      font-size: 1.5rem;
+      margin: 0;
+      font-size: 2rem;
       color: #fff;
     }
+
+    .ads{
+      max-width: 1200px;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin: 0 auto 3%;
+    }
+
+    .ad{
+      min-width: 150px;
+      width: 100%;
+      max-height: 350px;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://i.pinimg.com/1200x/77/f4/42/77f4420a876c94d75a7687491b5b1e62.jpg") no-repeat center/cover;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    
   </style>
 </head>
 
@@ -338,10 +368,23 @@
   <!--banner-->
   <section class="banner">
     <div>
-      <h2>Shop our Premium collection</h2>
+      <h2>#Shop our Premium collection</h2>
     </div>
   </section>
 
+    <!--Ad section-->
+    <section class="ads">
+        <div class="ad">
+          <p style="font-size: 15px; color: #ccd1c7ff;">Limited Time Offer</p>
+          <h2 style="color: #fff; font-size: 1.8rem">Laptop Collection</h2>
+          <p style="color: #fff;">Up to <span style="color: #d41010ff;">50%</span> off on selected items</p>
+        </div>
+        <div class="ad">
+          <p style="font-size: 15px; color: #ccd1c7ff;">Trending</p>
+          <h2 style="color: #fff; font-size:1.8rem;">Watch Collection</h2>
+          <p style="color: #fff;">Up to <span style="color: #d41010ff;">30%</span> off on selected items</p>
+        </div>
+    </section>
   <?php include 'includes/footer.php'; ?>
   <script src="assets/js/main.js"></script>
 </body>
