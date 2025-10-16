@@ -263,7 +263,7 @@
       color: #fff;
     }
 
-    .ads{
+    .ads {
       max-width: 1200px;
       width: 100%;
       height: auto;
@@ -274,18 +274,23 @@
       margin: 0 auto 3%;
     }
 
-    .ad{
+    .ad-inner>* {
+      margin: 0;
+    }
+
+    .ad {
       min-width: 150px;
       width: 100%;
       max-height: 350px;
       height: 100%;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://i.pinimg.com/1200x/77/f4/42/77f4420a876c94d75a7687491b5b1e62.jpg") no-repeat center/cover;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/1200x/77/f4/42/77f4420a876c94d75a7687491b5b1e62.jpg") no-repeat center/cover;
     }
 
-    
+    .add-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
   </style>
 </head>
 
@@ -372,19 +377,24 @@
     </div>
   </section>
 
-    <!--Ad section-->
-    <section class="ads">
-        <div class="ad">
-          <p style="font-size: 15px; color: #ccd1c7ff;">Limited Time Offer</p>
-          <h2 style="color: #fff; font-size: 1.8rem">Laptop Collection</h2>
-          <p style="color: #fff;">Up to <span style="color: #d41010ff;">50%</span> off on selected items</p>
-        </div>
-        <div class="ad">
-          <p style="font-size: 15px; color: #ccd1c7ff;">Trending</p>
-          <h2 style="color: #fff; font-size:1.8rem;">Watch Collection</h2>
-          <p style="color: #fff;">Up to <span style="color: #d41010ff;">30%</span> off on selected items</p>
-        </div>
-    </section>
+  <!--Ad section-->
+  <section class="ads">
+    <div class="ad">
+      <div class="ad-inner">
+        <p style="font-size: 15px; color: #ccd1c7ff; text-align:center;">Limited Time Offer</p>
+        <h2 style="color: #fff; font-size: 1.8rem; text-align:center;">Laptop Collection</h2>
+        <p style="color: #fff;">Up to <span style="color: #d41010ff; text-align:center;">50%</span> off on selected items</p>
+      </div>
+
+    </div>
+    <div class="ad-inner">
+      <div class="ad">
+        <p style="font-size: 15px; color: #ccd1c7ff; text-align:center;">Trending</p>
+        <h2 style="color: #fff; font-size:1.8rem; text-align:center;">Watch Collection</h2>
+        <p style="color: #fff;">Up to <span style="color: #d41010ff; text-align:center;">30%</span> off on selected items</p>
+      </div>
+    </div>
+  </section>
   <?php include 'includes/footer.php'; ?>
   <script src="assets/js/main.js"></script>
 </body>
