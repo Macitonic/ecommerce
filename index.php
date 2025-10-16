@@ -136,8 +136,8 @@
       gap: 2rem;
       max-width: 1200px;
       width: 100%;
-      padding: 3.5rem 3% 5rem;
-      margin: 0 3% 3%;
+      padding: 2rem 3%;
+      margin: 0 3% 1%;
     }
 
     /*====featured products====*/
@@ -145,10 +145,9 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
-      padding: 2rem;
       max-width: 1200px;
       width: 100%;
-      padding: 3.5rem 3% 5rem;
+      padding: 2rem 3%;
       margin: 0 auto;
     }
 
@@ -156,17 +155,19 @@
       background-color: rgba(34, 13, 13, 0.85);
       max-width: 220px;
       width: 100%;
-      height: 350px;
+      min-height: 300px;
+      height: auto;
       border: 1px solid transparent;
       border-radius: 20px 10px 10px 20px;
-      box-shadow: 1px 1px 1.8px grey, -1px -1px 1.8px grey;
+      box-shadow: 1px 1px 3px grey, -1px -1px 3px grey;
       transition: all 0.1s ease;
     }
 
     .card:hover {
       width: 100%;
       max-width: 221px;
-      height: 352px;
+      min-height: 302px;
+      height: auto;
       border: 1px solid transparent;
       border-radius: 20px 10px 10px 20px;
       box-shadow: 1.2px 1.2px 1.8px grey, -1.2px -1.2px 1.8px grey;
@@ -235,7 +236,7 @@
     .image img {
       width: 100%;
       height: 150px;
-      object-fit: fill;
+      object-fit: cover;
       border-radius: 20px 10px 0 0;
     }
 
