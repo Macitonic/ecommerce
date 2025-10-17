@@ -38,7 +38,7 @@
     }
 
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://i.pinimg.com/736x/95/fc/85/95fc853a0d4af8cf0ccbf90e7673fa96.jpg") no-repeat center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://i.pinimg.com/736x/95/fc/85/95fc853a0d4af8cf0ccbf90e7673fa96.jpg") no-repeat center/cover;
       max-width: 1200px;
       width: 100%;
       min-height: 100vh;
@@ -140,15 +140,14 @@
       margin: 0 3%;
     }
 
-    /*====featured products====*/
+    /*====featured products & new arrivals====*/
     .card-container {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 1rem;
       max-width: 1200px;
       width: 100%;
-      padding: 2rem 3%;
-      margin: 0 auto;
+      margin: 3%;
     }
 
     .card {
@@ -327,7 +326,7 @@
 
     }
 
-    .testmonials h1 {
+    .testmonials-content h1 {
       text-align: center;
       border-bottom: 20px;
     }
@@ -336,6 +335,7 @@
       text-align: center;
       margin-bottom: 60px;
       line-height: 1.5rem;
+      font-weight: 500;
     }
 
     .testmonials-cards-container {
@@ -348,7 +348,7 @@
       padding: 0 1.5rem;
     }
 
-    .testmonials-cards{
+    .testmonials-cards {
       background: rgba(22, 7, 7, 0.95);
       color: #fff;
       width: 100%;
@@ -358,16 +358,24 @@
       border-radius: 10px;
     }
 
-    .testmonials-cards p{
+    .testmonials-cards p {
       line-height: 1.5rem;
       font-weight: 300;
       margin-bottom: 20px;
     }
 
-    .testmonials-cards img{
+    .customer-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .customer-image {
       border-radius: 100%;
-      margin-right: 20px;
-      
+      object-fit: cover;
+      width: 60px;
+      height: 60px;
     }
   </style>
 </head>
@@ -429,24 +437,28 @@
   </div>
 
   <!--New Arrivals-->
-  <div class="card-container">
-    <?php
-    $results = $conn->query('SELECT * FROM new_arrivals');
-    while ($row = $results->fetch_assoc()) {
-    ?>
-      <div class="card">
-        <div class="image">
-          <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+  <section>
+    <h2>New Arrivals</h2>
+    <div class="card-container">
+      <?php
+      $results = $conn->query('SELECT * FROM new_arrivals');
+      while ($row = $results->fetch_assoc()) {
+      ?>
+        <div class="card">
+          <div class="image">
+            <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+          </div>
+          <div class="card-content">
+            <h2><?php echo $row['name'] ?></h2>
+            <p><?php echo $row['description'] ?></p>
+            <p>ksh.<?php echo $row['price'] ?></p>
+            <button>Add to Cart</button>
+          </div>
         </div>
-        <div class="card-content">
-          <h2><?php echo $row['name'] ?></h2>
-          <p><?php echo $row['description'] ?></p>
-          <p>ksh.<?php echo $row['price'] ?></p>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-    <?php }; ?>
-  </div>
+      <?php }; ?>
+    </div>
+  </section>
+
 
   <!--banner-->
   <section class="banner">
@@ -484,17 +496,29 @@
       <div class="testmonials-cards">
         <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
-        <p><img src="https://i.pinimg.com/1200x/97/e1/59/97e159c6c2dcb7d9d0c455e1a4e6287d.jpg" alt="Customer" width="100px" height="50px">Sarah Johnson</p>
+        <div class="customer-info">
+          <img src="https://i.pinimg.com/1200x/97/e1/59/97e159c6c2dcb7d9d0c455e1a4e6287d.jpg" alt="Customer" class="customer-image">
+          <span class="customer-name">Sarah Johnson</span>
+        </div>
+
+      </div>
+
+      <div class="testmonials-cards">
+        <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
+        <div class="customer-info">
+          <img src="https://i.pinimg.com/1200x/3e/f3/50/3ef350dc86cc82a092463e5d795654b5.jpg" alt="customer" class="customer-image">
+          <span class="customer-name">Ben Kyle</span>
+        </div>
+
       </div>
       <div class="testmonials-cards">
         <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
-        <p><img src="https://i.pinimg.com/1200x/3e/f3/50/3ef350dc86cc82a092463e5d795654b5.jpg" alt="customer" width="100px" height="50px">Ben Kyle</p>
-      </div>
-      <div class="testmonials-cards">
-        <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
-        <p><img src="https://i.pinimg.com/736x/b4/1f/db/b41fdb180c124f3f3f8e2791e0019715.jpg" alt="customer" width="100px" height="50px">Brian Davis</p>
+        <div class="customer-info">
+          <img src="https://i.pinimg.com/736x/b4/1f/db/b41fdb180c124f3f3f8e2791e0019715.jpg" alt="customer" class="customer-image">
+          <span class="customer-name">Brian Davis</span>
+        </div>
       </div>
     </div>
   </section>
