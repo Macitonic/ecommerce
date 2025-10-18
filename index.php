@@ -41,7 +41,7 @@
       background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://i.pinimg.com/736x/95/fc/85/95fc853a0d4af8cf0ccbf90e7673fa96.jpg") no-repeat center/cover;
       max-width: 1200px;
       width: 100%;
-      min-height: 100vh;
+      min-height: 90vh;
       padding: 3.5rem 3% 5rem;
       margin: 0 3% 1%;
       display: flex;
@@ -147,7 +147,15 @@
       gap: 1rem;
       max-width: 1200px;
       width: 100%;
-      margin: 3%;
+      margin: 0 3%;
+      padding: 1.5% 0;
+    }
+
+    section>h2 {
+      margin: 0;
+      padding: 0.6rem 3%;
+      font-size: 1.4rem;
+      text-align: left;
     }
 
     .card {
@@ -377,6 +385,10 @@
       width: 60px;
       height: 60px;
     }
+
+    section a {
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -391,8 +403,8 @@
     </div>
 
     <div class="hero-btn">
-      <a href="#"><button class="collection">Explore Our Collection</button></a>
-      <a href="#"><button class="arrivals">New Arrivals</button></a>
+      <a href="shop.php"><button class="collection">Explore Our Collection</button></a>
+      <a href="#new-arrivals"><button class="arrivals">New Arrivals</button></a>
     </div>
 
     <div class="hero-icons">
@@ -410,53 +422,66 @@
   </section>
 
   <!--category List-->
-  <section class="categories">
-    <div><?php include 'categories_tables/laptops.php'; ?></div>
-    <div><?php include 'categories_tables/headphones.php'; ?></div>
-    <div><?php include 'categories_tables/smartwatch.php'; ?></div>
-    <div><?php include 'categories_tables/PC Accessories & Components.php'; ?></div>
+  <section>
+    <h2>Choose by Category</h2>
+    <div class="categories">
+      <div><?php include 'categories_tables/laptops.php'; ?></div>
+      <div><?php include 'categories_tables/headphones.php'; ?></div>
+      <div><?php include 'categories_tables/smartwatch.php'; ?></div>
+      <div><?php include 'categories_tables/PC Accessories & Components.php'; ?></div>
+    </div>
   </section>
-  <!--Products List-->
-  <div class="card-container">
-    <?php
-    $results = $conn->query('SELECT * FROM featured_products');
-    while ($row = $results->fetch_assoc()) {
-    ?>
-      <div class="card">
-        <div class="image">
-          <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
-        </div>
-        <div class="card-content">
-          <h2><?php echo $row['name'] ?></h2>
-          <p><?php echo $row['description'] ?></p>
-          <p>ksh.<?php echo $row['price'] ?></p>
-          <button>Add to Cart</button>
-        </div>
+
+  <!--Featured Products-->
+  <section>
+    <h2>Featured Products</h2>
+    <a href="details_page.php">
+      <div class="card-container">
+        <?php
+        $results = $conn->query('SELECT * FROM featured_products');
+        while ($row = $results->fetch_assoc()) {
+        ?>
+          <div class="card">
+            <div class="image">
+              <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+            </div>
+            <div class="card-content">
+              <h2><?php echo $row['name'] ?></h2>
+              <p><?php echo $row['description'] ?></p>
+              <p>ksh.<?php echo $row['price'] ?></p>
+              <button>Add to Cart</button>
+            </div>
+          </div>
+        <?php }; ?>
       </div>
-    <?php }; ?>
-  </div>
+    </a>
+
+  </section>
+
 
   <!--New Arrivals-->
-  <section>
+  <section id="new-arrivals">
     <h2>New Arrivals</h2>
-    <div class="card-container">
-      <?php
-      $results = $conn->query('SELECT * FROM new_arrivals');
-      while ($row = $results->fetch_assoc()) {
-      ?>
-        <div class="card">
-          <div class="image">
-            <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+    <a href="details_page.php">
+      <div class="card-container">
+        <?php
+        $results = $conn->query('SELECT * FROM new_arrivals');
+        while ($row = $results->fetch_assoc()) {
+        ?>
+          <div class="card">
+            <div class="image">
+              <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+            </div>
+            <div class="card-content">
+              <h2><?php echo $row['name'] ?></h2>
+              <p><?php echo $row['description'] ?></p>
+              <p>ksh.<?php echo $row['price'] ?></p>
+              <button>Add to Cart</button>
+            </div>
           </div>
-          <div class="card-content">
-            <h2><?php echo $row['name'] ?></h2>
-            <p><?php echo $row['description'] ?></p>
-            <p>ksh.<?php echo $row['price'] ?></p>
-            <button>Add to Cart</button>
-          </div>
-        </div>
-      <?php }; ?>
-    </div>
+        <?php }; ?>
+      </div>
+    </a>
   </section>
 
 
