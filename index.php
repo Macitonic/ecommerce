@@ -476,7 +476,7 @@
               <h2><?php echo $row['name'] ?></h2>
               <p><?php echo $row['description'] ?></p>
               <p>ksh.<?php echo $row['price'] ?></p>
-              <button>Add to Cart</button>
+              <a href="cart.php"><button>Add to Cart</button></a>
             </div>
           </div>
         <?php }; ?>
