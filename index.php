@@ -435,26 +435,26 @@
   <!--Featured Products-->
   <section>
     <h2>Featured Products</h2>
-    <a href="details_page.php">
-      <div class="card-container">
-        <?php
-        $results = $conn->query('SELECT * FROM featured_products');
-        while ($row = $results->fetch_assoc()) {
-        ?>
-          <div class="card">
-            <div class="image">
-              <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
-            </div>
-            <div class="card-content">
-              <h2><?php echo $row['name'] ?></h2>
-              <p><?php echo $row['description'] ?></p>
-              <p>ksh.<?php echo $row['price'] ?></p>
-              <button>Add to Cart</button>
-            </div>
+
+    <div class="card-container">
+      <?php
+      $results = $conn->query('SELECT * FROM featured_products');
+      while ($row = $results->fetch_assoc()) {
+      ?>
+        <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php'">
+          <div class="image">
+            <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
           </div>
-        <?php }; ?>
-      </div>
-    </a>
+          <div class="card-content">
+            <h2><?php echo $row['name'] ?></h2>
+            <p><?php echo $row['description'] ?></p>
+            <p>ksh.<?php echo $row['price'] ?></p>
+            <button type="button" onclick="event.stopPropagation(); window.location='cart.php'">Add to Cart</button>
+          </div>
+        </div>
+      <?php }; ?>
+    </div>
+
 
   </section>
 
@@ -462,26 +462,24 @@
   <!--New Arrivals-->
   <section id="new-arrivals">
     <h2>New Arrivals</h2>
-    <a href="details_page.php">
-      <div class="card-container">
-        <?php
-        $results = $conn->query('SELECT * FROM new_arrivals');
-        while ($row = $results->fetch_assoc()) {
-        ?>
-          <div class="card">
-            <div class="image">
-              <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
-            </div>
-            <div class="card-content">
-              <h2><?php echo $row['name'] ?></h2>
-              <p><?php echo $row['description'] ?></p>
-              <p>ksh.<?php echo $row['price'] ?></p>
-              <a href="cart.php"><button>Add to Cart</button></a>
-            </div>
+    <div class="card-container">
+      <?php
+      $results = $conn->query('SELECT * FROM new_arrivals');
+      while ($row = $results->fetch_assoc()) {
+      ?>
+        <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php'">
+          <div class="image">
+            <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
           </div>
-        <?php }; ?>
-      </div>
-    </a>
+          <div class="card-content">
+            <h2><?php echo $row['name'] ?></h2>
+            <p><?php echo $row['description'] ?></p>
+            <p>ksh.<?php echo $row['price'] ?></p>
+            <button type="button" onclick="event.stopPropagation(); window.location='cart.php'">Add to Cart</button>
+          </div>
+        </div>
+      <?php }; ?>
+    </div>
   </section>
 
 

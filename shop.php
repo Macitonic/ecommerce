@@ -1,4 +1,6 @@
-<?php include 'db.php'; ?>
+<?php include 'db.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,7 +149,8 @@
             object-fit: cover;
             border-radius: 20px 10px 0 0;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
     </style>
@@ -159,26 +162,25 @@
     <h1>Shop all of our products</h1>
     <h4>Home / Shop</h4>
     <div>
-        <a href="details_page.php">
-            <div class="card-container">
-                <?php
-                $results = $conn->query('SELECT * FROM products');
-                while ($row = $results->fetch_assoc()) {
-                ?>
-                    <div class="card">
-                        <div class="image">
-                            <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
-                        </div>
-                        <div class="card-content">
-                            <h2><?php echo $row['name'] ?></h2>
-                            <p><?php echo $row['description'] ?></p>
-                            <p>ksh.<?php echo $row['price'] ?></p>
-                            <button>Add to Cart</button>
-                        </div>
+        <div class="card-container">
+            <?php
+            $results = $conn->query('SELECT * FROM products');
+            while ($row = $results->fetch_assoc()) {
+            ?>
+                <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add=<?php echo $row['id'];  ?>'">
+                    <div class="image">
+                        <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
                     </div>
-                <?php }; ?>
-            </div>
-        </a>
+                    <div class="card-content">
+                        <h2><?php echo $row['name'] ?></h2>
+                        <p><?php echo $row['description'] ?></p>
+                        <p>ksh.<?php echo $row['price'] ?></p>
+                        <button type="button" onclick="event.stopPropagation(); location='cart.php?add=<?php echo $row['id']; ?>'">Add to Cart</button>
+                    </div>
+                </div>
+            <?php }; ?>
+        </div>
+
     </div>
     <?php include 'includes/footer.php'; ?>
     <script src="assets/js/main.js"></script>

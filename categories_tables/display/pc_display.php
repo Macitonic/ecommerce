@@ -134,7 +134,8 @@
             object-fit: fill;
             border-radius: 20px 10px 0 0;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
     </style>
@@ -142,26 +143,26 @@
 
 <body>
     <?php include '../../includes/navbar.php'; ?>
-    <a href="../../details_page.php">
-        <div class="card-container">
-            <?php
-            $results = $conn->query('SELECT * FROM pc');
-            while ($row = $results->fetch_assoc()) {
-            ?>
-                <div class="pc-card">
-                    <div class="image">
-                        <img src="https://i.pinimg.com/736x/fd/3f/c7/fd3fc71cf6257839ca007b9c39803aae.jpg" alt="laptop">
-                    </div>
-                    <div class="card-content">
-                        <h2><?php echo $row['name'] ?></h2>
-                        <p><?php echo $row['description'] ?></p>
-                        <p>ksh.<?php echo $row['price'] ?></p>
-                        <button>Add to Cart</button>
-                    </div>
+
+    <div class="card-container">
+        <?php
+        $results = $conn->query('SELECT * FROM pc');
+        while ($row = $results->fetch_assoc()) {
+        ?>
+            <div class="pc-card" style="cursor: pointer;" onclick="location.href='../../details_page.php'">
+                <div class="image">
+                    <img src="https://i.pinimg.com/736x/fd/3f/c7/fd3fc71cf6257839ca007b9c39803aae.jpg" alt="laptop">
                 </div>
-            <?php }; ?>
-        </div>
-    </a>
+                <div class="card-content">
+                    <h2><?php echo $row['name'] ?></h2>
+                    <p><?php echo $row['description'] ?></p>
+                    <p>ksh.<?php echo $row['price'] ?></p>
+                    <button type="button" onclick="event.stopPropagation(); window.location='../../cart.php'">Add to Cart</button>
+                </div>
+            </div>
+        <?php }; ?>
+    </div>
+
     <?php include '../../includes/footer.php'; ?>
     <script src="../../assets/js/main.js"></script>
 </body>
