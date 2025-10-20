@@ -449,7 +449,7 @@
             <h2><?php echo $row['name'] ?></h2>
             <p><?php echo $row['description'] ?></p>
             <p>ksh.<?php echo $row['price'] ?></p>
-            <button type="button" onclick="event.stopPropagation(); window.location='cart.php'">Add to Cart</button>
+            <button type="button" onclick="event.stopPropagation(); window.location='cart.php?add_type=featured_products&add_id=<?php echo $row['id']; ?>'">Add to Cart</button>
           </div>
         </div>
       <?php }; ?>
@@ -475,7 +475,7 @@
             <h2><?php echo $row['name'] ?></h2>
             <p><?php echo $row['description'] ?></p>
             <p>ksh.<?php echo $row['price'] ?></p>
-            <button type="button" onclick="event.stopPropagation(); window.location='cart.php'">Add to Cart</button>
+            <button type="button" onclick="event.stopPropagation(); window.location='cart.php?add_type=new_arrivals&add_id=<?php echo $row['id']; ?>'">Add to Cart</button>
           </div>
         </div>
       <?php }; ?>

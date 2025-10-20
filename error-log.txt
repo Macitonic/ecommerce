@@ -8,3 +8,5 @@ alter table table_name
 add constraint column name
 foreign key (name_of_column in current table) refereces (name_of_table and column referenced)
 on delete cascade;
+
+continue shopping button that stores user last visited page; I want it to allow the visitor to continue from their last shoping pages

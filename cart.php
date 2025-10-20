@@ -2,33 +2,90 @@
 session_start();
 include 'db.php';
 
+//get item details function
+
+function getItemsId(mysqli $conn, string $type, int $id)
+{
+  $sql = "";
+  $allowed = ['products', 'featured_products', 'new_arrivals', 'headphones', 'laptops', 'pc', 'watches'];
+  if (!in_array($type, $allowed, true)){
+    return false;
+  }
+
+  $sql = "SELECT id, name, price, image FROM `$type` WHERE id= ?";
+
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('i', $id);
+  $stmt->execute();
+  $results = $stmt->get_result();
+  return $results->fetch_assoc();
+};
+
 //adds items to the cart
-if (isset($_GET['add'])) {
-  $id = (int)$_GET['add'];
-  if ($id > 0) {
-    $_SESSION['cart'][$id] = ($_SESSION['cart'][$id] ?? 0) + 1;
+if (isset($_GET['add_type'], $_GET['add_id'])) {
+  $type = $_GET['add_type'];
+  $id = (int)$_GET['add_id'];
+
+  $allowed = ['products', 'featured_products', 'new_arrivals', 'headphones', 'laptops', 'pc', 'watches'];
+  if (in_array($type, $allowed, true) && $id > 0) {
+    $key = $type . ':' . $id;
+    $_SESSION['cart'][$key] = ($_SESSION['cart'][$key] ?? 0) + 1;
   }
 
   header("location:cart.php");
   exit;
 }
 //removes the items in the cart
+//removes the items in the cart
 if (isset($_GET['remove'])) {
-  $remove = (int)$_GET['remove'];
-  if ($remove > 0) {
-    unset($_SESSION['cart'][$_GET['remove']]);
+  $remove_key = urldecode($_GET['remove']); // Get the full key, e.g., 'products:1'
+  if (isset($_SESSION['cart'][$remove_key])) {
+    unset($_SESSION['cart'][$remove_key]);
   }
 
   header("location:cart.php");
   exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>Shopping Cart</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets\css\styles.css" />
+  <style>
+    :root {
+      --font-primary: "Roboto", sans-serif;
+      --font-secondary: "Montserrat", serif;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #fff;
+      color: #000;
+      font-family: var(--font-primary);
+    }
+
+    h1,
+    h2,
+    h3,
+    .title,
+    .product-name {
+      font-family: var(--font-secondary);
+    }
+    </style>
 </head>
 
 <body class="container py-5">
@@ -43,22 +100,26 @@ if (isset($_GET['remove'])) {
     <?php
     $total = 0;
     if (!empty($_SESSION['cart'])) {
-      foreach ($_SESSION['cart'] as $id => $qty) {
-        $safe_id = (int)$id;
-        $result = $conn->query("SELECT * FROM products WHERE id=$id");
-        $product = $result->fetch_assoc();
+      foreach ($_SESSION['cart'] as $key => $qty) {
+        //array destructuring syntax
+        [$type, $id] = explode(':', $key);
+        $id = (int) $id;
+        $items = getItemsId($conn, $type, $id);
+
         //An if block that checks if the table data that was retrieved if it exists, if not the it skipa the next lines of codes to the next block
-        if (!$product) {
-          unset($_SESSION['cart'][$id]);
+        if (!$items) {
+          unset($_SESSION['cart'][$key]);
           continue;
         };
-        $subtotal = $product['price'] * $qty;
+
+        //the urlencode below allows safe url econding hence preventing parsing issues
+        $subtotal = $items['price'] * $qty;
         $total += $subtotal;
         echo "<tr>
-                <td>{$product['name']}</td>
+                <td>{$items['name']}</td>
                 <td>$qty</td>
                 <td>Ksh $subtotal</td>
-                <td><a href='cart.php?remove=$safe_id' class='btn btn-danger btn-sm'>Remove</a></td>
+                <td><a href='cart.php?remove=" . urlencode($key) . "' class='btn btn-danger btn-sm'>Remove</a></td>
             </tr>";
       }
     } else {

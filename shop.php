@@ -1,5 +1,7 @@
-<?php include 'db.php';
+<?php
 session_start();
+include 'db.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -175,7 +177,7 @@ session_start();
                         <h2><?php echo $row['name'] ?></h2>
                         <p><?php echo $row['description'] ?></p>
                         <p>ksh.<?php echo $row['price'] ?></p>
-                        <button type="button" onclick="event.stopPropagation(); location='cart.php?add=<?php echo $row['id']; ?>'">Add to Cart</button>
+                        <button type="button" onclick="event.stopPropagation(); location='cart.php?add_type=products&add_id=<?php echo $row['id']; ?>'">Add to Cart</button>
                     </div>
                 </div>
             <?php }; ?>
