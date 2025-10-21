@@ -71,6 +71,18 @@
             border-radius: 15px 0 0 15px;
         }
 
+        .contact-info {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            font-weight: 200;
+        }
+
         .contact-form {
             width: 60%;
             height: 550px;
@@ -149,6 +161,39 @@
             border-radius: 5px;
 
         }
+
+        .map {
+            margin: 5% 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+        }
+
+        .faq-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 3% 0;
+
+        }
+
+        .faq-card {
+            margin-bottom: 10px;
+            background-color: #cac3c3ff;
+            width: 570px;
+            padding: 1rem;
+            border-radius: 15px;
+        }
+
+        .faq-container h3 {
+            font-weight: 600;
+        }
+
+        .faq-container p {
+            font-weight: 300;
+        }
     </style>
 </head>
 
@@ -164,8 +209,8 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga explicabo minima.</p>
                 <div class="contact-info">
                     <img
-                        width="20"
-                        height="20"
+                        width="35"
+                        height="35"
                         src="https://img.icons8.com/ios-filled/50/FAB005/marker.png"
                         alt="marker" />
                     <div>
@@ -175,8 +220,8 @@
                 </div>
                 <div class="contact-info">
                     <img
-                        width="20"
-                        height="20"
+                        width="35"
+                        height="35"
                         src="https://img.icons8.com/sf-ultralight-filled/25/FAB005/phone.png"
                         alt="phone" />
                     <div>
@@ -186,8 +231,8 @@
                 </div>
                 <div class="contact-info">
                     <img
-                        width="20"
-                        height="20"
+                        width="35"
+                        height="35"
                         src="https://img.icons8.com/ios-filled/50/FAB005/mail.png"
                         alt="mail" />
                     <div>
@@ -196,11 +241,14 @@
                     </div>
                 </div>
                 <div class="contact-info">
-                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/FAB005/timer.png" alt="timer" />
+                    <img width="35" height="35" src="https://img.icons8.com/ios-filled/50/FAB005/timer.png" alt="timer" />
                     <div>
                         <h4>Business Hours</h4>
-                        <p>Mon-Fri: 9:00am-6:00pm</p>
-                        <p>Sat: 10:00am-4:00pm</p>
+                        <div>
+                            <p>Mon-Fri: 9:00am-6:00pm</p>
+                            <p>Sat: 10:00am-4:00pm</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -231,6 +279,42 @@
                 </form>
             </div>
         </div>
+
+        <section>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6335959725257!2d36.7571589677483!3d-1.396305595475378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f05e86a61a2f9%3A0x309aeb3342d2759b!2sEmmanuel%20House!5e0!3m2!1sen!2s!4v1761063900506!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section>
+            <div class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <h3>1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ea fugit et atque quaerat ipsum voluptas. </p>
+                        </div>
+                        <div class="faq-card">
+                            <h3>2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ea fugit et atque quaerat ipsum voluptas. </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card-container">
+                        <div class="faq-card">
+                            <h3>3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ea fugit et atque quaerat ipsum voluptas. </p>
+                        </div>
+                        <div class="faq-card">
+                            <h3>4. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ea fugit et atque quaerat ipsum voluptas. </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     </section>
 
