@@ -1,10 +1,3 @@
-<?php
-session_start();
-include 'db.php';
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -15,16 +8,8 @@ include 'db.php';
 
 <body class="container py-5">
   <h1>🎉 Order Successful!</h1>
-  <p>Thank you for shopping with us. Your order ID is <b><?php echo $_GET['id']; ?></b>.</p>
+  <p>Thank you for shopping with us.</b>.</p>
   <a href="shop.php" class="btn btn-primary">Back to Shop</a>
 </body>
 
 </html>
-
-<?php
-  session_unset();
-  session_destroy();
-
-  header("location:thankyou.php");
-  exit;
-?>
