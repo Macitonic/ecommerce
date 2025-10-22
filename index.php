@@ -218,6 +218,7 @@
       height: auto;
       border: 1px solid transparent;
       border-radius: 15px;
+      cursor: pointer;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transform: translateY(-5px) scale(1.02);
 
@@ -346,6 +347,7 @@
       width: 100%;
       min-height: 250px;
       height: 100%;
+      cursor: pointer;
       border-bottom: 1px solid #f39d00;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
