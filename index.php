@@ -11,6 +11,10 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     :root {
       --font-primary: "Roboto", sans-serif;
       --font-secondary: "Montserrat", serif;
@@ -50,6 +54,14 @@
       border: 1.8px solid #f39d00;
       border-radius: 20px;
       color: #fff;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    .hero.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .hero-content h1 {
@@ -385,8 +397,6 @@
       width: 60px;
       height: 60px;
     }
-
-
   </style>
 </head>
 
