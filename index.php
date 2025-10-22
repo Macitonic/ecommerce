@@ -9,7 +9,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="assets\css\styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
     :root {
       --font-primary: "Roboto", sans-serif;
@@ -151,7 +151,7 @@
       padding: 1.5% 0;
     }
 
-    section>h2 {
+    .sec2 {
       margin: 0;
       padding: 0.6rem 3%;
       font-size: 1.4rem;
@@ -386,9 +386,7 @@
       height: 60px;
     }
 
-    section a {
-      text-decoration: none;
-    }
+
   </style>
 </head>
 
@@ -423,7 +421,7 @@
 
   <!--category List-->
   <section>
-    <h2>Choose by Category</h2>
+    <h2 class="sec2">Choose by Category</h2>
     <div class="categories">
       <div><?php include 'categories_tables/laptops.php'; ?></div>
       <div><?php include 'categories_tables/headphones.php'; ?></div>
@@ -434,7 +432,7 @@
 
   <!--Featured Products-->
   <section>
-    <h2>Featured Products</h2>
+    <h2 class="sec2">Featured Products</h2>
 
     <div class="card-container">
       <?php
@@ -461,7 +459,7 @@
 
   <!--New Arrivals-->
   <section id="new-arrivals">
-    <h2>New Arrivals</h2>
+    <h2 class="sec2">New Arrivals</h2>
     <div class="card-container">
       <?php
       $results = $conn->query('SELECT * FROM new_arrivals');

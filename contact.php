@@ -54,7 +54,7 @@
             font-weight: 500;
         }
 
-        .contact-sec1 {
+        .contact-sec101 {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -76,7 +76,7 @@
             flex-direction: row;
             align-items: flex-start;
             gap: 10px;
-            margin-bottom: 15px;
+            margin: 50px 0;
         }
 
         .contact-info p {
@@ -181,18 +181,19 @@
 
         .faq-card {
             margin-bottom: 10px;
-            background-color: #cac3c3ff;
+            background-color: rgba(22, 7, 7, 0.95);
             width: 570px;
             padding: 1rem;
             border-radius: 15px;
+            color: #fff;
         }
 
         .faq-container h3 {
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .faq-container p {
-            font-weight: 300;
+            font-weight: 200;
         }
     </style>
 </head>
@@ -203,7 +204,7 @@
     <section class="contact-section">
         <h1>Contact Us</h1>
         <h3>About us/ Contact</h3>
-        <div class="contact-sec1">
+        <div class="contact-sec101">
             <div class="get-in-touch">
                 <h2>Get in Touch</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga explicabo minima.</p>
