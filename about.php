@@ -38,9 +38,20 @@
             font-family: var(--font-secondary);
         }
 
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .about {
             padding: 2rem 0 3rem;
-            margin: 3%;
+            margin: 1% 3%;
             max-width: 1200px;
             width: 100%;
         }
@@ -191,14 +202,14 @@
     <?php include 'includes/navbar.php'; ?>
 
     <!--About-hero section-->
-    <section class="about">
-        <div class="about-hero">
+    <main class="about">
+        <section class="about-hero">
             <h2>About Us</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum tenetur</p>
-        </div>
+        </section>
 
         <!--Our story section-->
-        <div class="story-section">
+        <section class="story-section">
             <div class="our-story">
                 <h2>Our Story</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores deserunt exercitationem ipsam quas quos a laborum asperiores, possimus minus in qui fugit voluptatem non placeat. Rem provident quia omnis magni?Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt unde eius laborum. Voluptatibus quis animi nobis est impedit ut veritatis mollitia quam suscipit. Incidunt, commodi? Dignissimos quasi impedit officiis tempore.</p>
@@ -208,9 +219,9 @@
                     <source src="assets/team.mp4" alt="team.mp4">
                 </video>
             </div>
-        </div>
+        </section>
         <!--Card section-->
-        <div class="card-section">
+        <section class="card-section">
             <h2 class="title">Our Story</h2>
             <div class="card-container">
                 <div class="card">
@@ -234,10 +245,10 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, perspiciatis aut. Vitae tempora cupiditate ipsam porro, doloribus commodi </p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!--Team section-->
-        <div class="team-section">
+        <section class="team-section">
             <h2 class="title">Our Team</h2>
             <div class="card-container">
                 <div class="team-card">
@@ -278,9 +289,9 @@
 
                 </div>
             </div>
-        </div>
+        </section>
 
-    </section>
+    </main>
     <?php include 'includes/footer.php'; ?>
     <script src="assets/js/main.js"></script>
 </body>

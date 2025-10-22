@@ -17,11 +17,14 @@
             --font-secondary: "Montserrat", serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
@@ -36,6 +39,17 @@
         .title,
         .product-name {
             font-family: var(--font-secondary);
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .contact-section {
@@ -201,10 +215,13 @@
 <body>
     <?php include 'includes/navbar.php'; ?>
 
-    <section class="contact-section">
-        <h1>Contact Us</h1>
-        <h3>About us/ Contact</h3>
-        <div class="contact-sec101">
+    <main class="contact-section">
+        <section>
+            <h1>Contact Us</h1>
+            <h3>About us/ Contact</h3>
+        </section>
+
+        <section class="contact-sec101">
             <div class="get-in-touch">
                 <h2>Get in Touch</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga explicabo minima.</p>
@@ -279,7 +296,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </section>
 
         <section>
             <div class="map">
@@ -317,7 +334,7 @@
             </div>
         </section>
 
-    </section>
+    </main>
 
     <?php include 'includes/footer.php'; ?>
     <script src="assets/js/main.js"></script>

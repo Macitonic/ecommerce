@@ -20,6 +20,10 @@ include '../../db.php';
             --font-secondary: "Montserrat", serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             padding: 0;
             margin: 0;
@@ -41,6 +45,18 @@ include '../../db.php';
             font-family: var(--font-secondary);
         }
 
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+
+        }
+
         .card-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -59,7 +75,7 @@ include '../../db.php';
             height: 350px;
             border: 1px solid transparent;
             border-radius: 20px 10px 10px 20px;
-            box-shadow: 1px 1px 1.8px grey, -1px -1px 1.8px grey;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.1s ease;
         }
 
@@ -69,7 +85,8 @@ include '../../db.php';
             height: 352px;
             border: 1px solid transparent;
             border-radius: 20px 10px 10px 20px;
-            box-shadow: 1.2px 1.2px 1.8px grey, -1.2px -1.2px 1.8px grey;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px) scale(1.02);
 
         }
 
@@ -148,7 +165,7 @@ include '../../db.php';
 <body>
     <?php include '../../includes/navbar.php'; ?>
 
-    <div class="card-container">
+    <section class="card-container">
         <?php
         $results = $conn->query('SELECT * FROM pc');
         while ($row = $results->fetch_assoc()) {
@@ -165,7 +182,7 @@ include '../../db.php';
                 </div>
             </div>
         <?php }; ?>
-    </div>
+    </section>
 
     <?php include '../../includes/footer.php'; ?>
     <script src="../../assets/js/main.js"></script>

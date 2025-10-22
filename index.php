@@ -54,12 +54,16 @@
       border: 1.8px solid #f39d00;
       border-radius: 20px;
       color: #fff;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s ease;
+
     }
 
-    .hero.show {
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1.5s ease;
+    }
+
+    section.show {
       opacity: 1;
       transform: translateY(0);
     }
@@ -81,6 +85,10 @@
       gap: 20px;
     }
 
+    .hero-icons {
+      margin: 0;
+    }
+
     .collection {
       background-color: #f39d00;
       color: #fff;
@@ -90,7 +98,7 @@
       width: 200px;
       height: 40px;
       border-radius: 5px;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
     }
 
     .collection:hover {
@@ -102,6 +110,8 @@
       width: 202px;
       height: 42px;
       border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px) scale(1.02);
     }
 
     .arrivals {
@@ -113,6 +123,7 @@
       width: 150px;
       height: 40px;
       border-radius: 5px;
+      transition: all 0.3s ease;
     }
 
     .arrivals:hover {
@@ -124,6 +135,8 @@
       width: 152px;
       height: 42px;
       border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px) scale(1.02);
     }
 
     .hero-icons {
@@ -161,6 +174,22 @@
       width: 100%;
       margin: 0 3%;
       padding: 1.5% 0;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.1s ease;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 3%;
+      padding: 1.5% 0;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px) scale(1.02);
     }
 
     .sec2 {
@@ -177,9 +206,9 @@
       min-height: 300px;
       height: auto;
       border: 1px solid transparent;
-      border-radius: 20px 10px 10px 20px;
-      box-shadow: 1px 1px 3px grey, -1px -1px 3px grey;
-      transition: all 0.1s ease;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
 
     .card:hover {
@@ -188,8 +217,9 @@
       min-height: 302px;
       height: auto;
       border: 1px solid transparent;
-      border-radius: 20px 10px 10px 20px;
-      box-shadow: 1.2px 1.2px 1.8px grey, -1.2px -1.2px 1.8px grey;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px) scale(1.02);
 
     }
 
@@ -286,7 +316,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 20px;
       margin: 3%;
     }
 
@@ -304,6 +334,22 @@
       height: 100%;
       border-bottom: 1px solid #f39d00;
       border-radius: 10px;
+      transition: all 0.3s ease;
+
+    }
+
+    .ad:hover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 250px;
+      width: 100%;
+      min-height: 250px;
+      height: 100%;
+      border-bottom: 1px solid #f39d00;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px) scale(1.02);
 
     }
 
@@ -402,32 +448,35 @@
 
 <body class="container">
   <?php include 'includes/navbar.php'; ?>
-
-  <h4>FREE DELIVERY On Products over 5000</h4>
-  <section class="hero" id="#">
-    <div class="hero-content">
-      <h1>Redefine What’s Possible.</h1>
-      <p>Discover premium gadgets that combine style, speed, <br>and innovation — all in one place.</p>
-    </div>
-
-    <div class="hero-btn">
-      <a href="shop.php"><button class="collection">Explore Our Collection</button></a>
-      <a href="#new-arrivals"><button class="arrivals">New Arrivals</button></a>
-    </div>
-
-    <div class="hero-icons">
-      <div>
-        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/fce80a/group.png" alt="group" />
-        <h2>5k</h2>
-        <p>users</p>
+  <section>
+    <h4>FREE DELIVERY On Products over 5000</h4>
+    <section class="hero" id="#">
+      <div class="hero-content">
+        <h1>Redefine What’s Possible.</h1>
+        <p>Discover premium gadgets that combine style, speed, <br>and innovation — all in one place.</p>
       </div>
-      <div>
-        <img width="30" height="30" src="https://img.icons8.com/material-rounded/24/fce80a/grid-2.png" alt="grid-2" />
-        <h2>1000+</h2>
-        <p>Products</p>
+
+      <div class="hero-btn">
+        <a href="shop.php"><button class="collection">Explore Our Collection</button></a>
+        <a href="#new-arrivals"><button class="arrivals">New Arrivals</button></a>
       </div>
-    </div>
+
+      <div class="hero-icons">
+        <div>
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/fce80a/group.png" alt="group" />
+          <h2>5k</h2>
+          <p>users</p>
+        </div>
+        <div>
+          <img width="30" height="30" src="https://img.icons8.com/material-rounded/24/fce80a/grid-2.png" alt="grid-2" />
+          <h2>1000+</h2>
+          <p>Products</p>
+        </div>
+      </div>
+    </section>
   </section>
+
+
 
   <!--category List-->
   <section>

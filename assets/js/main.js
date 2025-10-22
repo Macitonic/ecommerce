@@ -8,12 +8,13 @@ menuToggle.addEventListener("click", () => {
 
 /*fade-in animations*/
 
-document.addEventListener("DOMContentLoaded", function () {
-  const fade_in = document.querySelectorAll(".hero");
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {threshold: 0.3 });
 
-  if (fade_in) {
-    fade_in.classList.add("show");
-  } else{
-    console.error("Elements with the class 'hero' did not appear")
-  }
-});
+sections.forEach(section => observer.observe(section));

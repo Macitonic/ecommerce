@@ -22,11 +22,14 @@ include 'db.php';
             --font-secondary: "Montserrat", serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;
         }
 
         body {
@@ -41,6 +44,17 @@ include 'db.php';
         .title,
         .product-name {
             font-family: var(--font-secondary);
+        }
+
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s ease;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h1 {
@@ -70,9 +84,8 @@ include 'db.php';
             min-height: 300px;
             height: auto;
             border: 1px solid transparent;
-            border-radius: 20px 10px 10px 20px;
-            box-shadow: 1px 1px 3px grey, -1px -1px 3px grey;
-            transition: all 0.1s ease;
+            border-radius: 15px;
+            transition: all 0.3s ease;
         }
 
         .card:hover {
@@ -81,8 +94,10 @@ include 'db.php';
             min-height: 302px;
             height: auto;
             border: 1px solid transparent;
-            border-radius: 20px 10px 10px 20px;
-            box-shadow: 1.2px 1.2px 1.8px grey, -1.2px -1.2px 1.8px grey;
+            border-radius: 15px;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
 
         }
 
@@ -161,29 +176,32 @@ include 'db.php';
 <body>
     <?php include 'includes/navbar.php'; ?>
     <!--shop products-->
-    <h1>Shop all of our products</h1>
-    <h4>Home / Shop</h4>
-    <div>
-        <div class="card-container">
-            <?php
-            $results = $conn->query('SELECT * FROM products');
-            while ($row = $results->fetch_assoc()) {
-            ?>
-                <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add=<?php echo $row['id'];  ?>'">
-                    <div class="image">
-                        <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+    <section>
+        <h1>Shop all of our products</h1>
+        <h4>Home / Shop</h4>
+        <div>
+            <div class="card-container">
+                <?php
+                $results = $conn->query('SELECT * FROM products');
+                while ($row = $results->fetch_assoc()) {
+                ?>
+                    <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add=<?php echo $row['id'];  ?>'">
+                        <div class="image">
+                            <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
+                        </div>
+                        <div class="card-content">
+                            <h2><?php echo $row['name'] ?></h2>
+                            <p><?php echo $row['description'] ?></p>
+                            <p>ksh.<?php echo $row['price'] ?></p>
+                            <button type="button" onclick="event.stopPropagation(); location='cart.php?add_type=products&add_id=<?php echo $row['id']; ?>'">Add to Cart</button>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h2><?php echo $row['name'] ?></h2>
-                        <p><?php echo $row['description'] ?></p>
-                        <p>ksh.<?php echo $row['price'] ?></p>
-                        <button type="button" onclick="event.stopPropagation(); location='cart.php?add_type=products&add_id=<?php echo $row['id']; ?>'">Add to Cart</button>
-                    </div>
-                </div>
-            <?php }; ?>
-        </div>
+                <?php }; ?>
+            </div>
 
-    </div>
+        </div>
+    </section>
+
     <?php include 'includes/footer.php'; ?>
     <script src="assets/js/main.js"></script>
 </body>

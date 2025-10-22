@@ -13,7 +13,7 @@
             border: 1px solid transparent;
             border-radius: 15px;
             box-shadow: 1px 1px 1.8px grey, -1px -1px 1.8px grey;
-            transition: all 0.1s ease;
+            transition: all 0.3s ease;
         }
 
         .pc-card:hover {
@@ -22,8 +22,8 @@
             height: 252px;
             border: 1px solid transparent;
             border-radius: 15px;
-            box-shadow: 1.2px 1.2px 1.8px grey, -1.2px -1.2px 1.8px grey;
-
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px) scale(1.02);
         }
 
         .card-content {
@@ -47,11 +47,12 @@
             font-weight: 700;
         }
 
-        h2{
+        h2 {
             margin: 50% auto;
             text-align: center;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
     </style>
@@ -66,4 +67,5 @@
         </div>
     </a>
 </body>
+
 </html>

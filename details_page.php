@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +15,10 @@
         :root {
             --font-primary: "Roboto", sans-serif;
             --font-secondary: "Montserrat", serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -38,6 +40,17 @@
         .title,
         .product-name {
             font-family: var(--font-secondary);
+        }
+
+        section{
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        section.show{
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .details_page {
@@ -120,7 +133,7 @@
         .description {
             width: 100%;
             max-width: 1200px;
-            margin:8% 3%;
+            margin: 8% 3%;
         }
 
         .description-titles {
