@@ -58,13 +58,18 @@
     }
 
 
-    section {
+    .section2 {
       margin: 3%;
       max-width: 1200px;
       width: 100%;
       display: grid;
-      grid-template-columns: 85% 1fr;
-      gap: 0;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      align-items: start;
+
+    }
+
+    section {
       opacity: 0;
       transform: translateY(50px);
       transition: all 1s ease;
@@ -76,7 +81,7 @@
     }
 
     .card-container {
-      width: 65%;
+      width: 100%;
       height: 120px;
       background-color: #cac3c3ff;
       display: flex;
@@ -130,7 +135,7 @@
     }
 
     .actions {
-      width: 64%;
+      width: 100%;
       display: flex;
       justify-content: space-between;
     }
@@ -160,8 +165,42 @@
       transform: translateY(-5px) scale(1.02);
     }
 
-    .order-summary{
-      
+    .order-summary {
+      background-color: #cac3c3ff;
+      padding: 20px;
+      border-radius: 10px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+
+    .order-summary h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f39d00;
+      padding-bottom: 10px;
+    }
+
+    .order-summary>div {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+      font-size: 1rem;
+    }
+
+    .order-summary>div:last-of-type {
+      border-top: 2px solid #f39d00;
+      padding-top: 15px;
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .order-summary>p {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
     }
   </style>
 </head>
@@ -175,6 +214,9 @@
         <h3>Home / Cart</h3>
         <h4>Shopping Cart(number)</h4>
       </div>
+  </section>
+  <section class="section2">
+    <div>
       <?php if (!empty($cart_items)): ?>
         <?php foreach ($cart_items as $item): ?>
           <div class="card-container">
@@ -203,14 +245,13 @@
       </div>
     </div>
 
-
     <div class="order-summary">
       <h2>Order Summary</h2>
       <div>
         <p>Subtotal</p>
-        <p>Ksh. <?=$total?></p>
+        <p>Ksh. <?= $total ?></p>
       </div>
-      
+
       <div>
         <p>VAT</p>
         <p>16%</p>
