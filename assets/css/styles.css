@@ -66,8 +66,8 @@ header {
 /*===Contact Section===*/
 
 .contact {
-  padding: 3.5rem 1% 5rem;
-  margin: 3%;
+  box-sizing: border-box;
+  margin: 0 3%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 70px;
@@ -86,7 +86,6 @@ header {
 .contact-sec4 h2 {
   font-size: 1.4rem;
   margin-bottom: 22px;
-  padding: 0 auto;
 }
 
 .contact-sec1 p,

@@ -85,6 +85,7 @@ include 'db.php';
             height: auto;
             border: 1px solid transparent;
             border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -167,9 +168,7 @@ include 'db.php';
             border-radius: 20px 10px 0 0;
         }
 
-        a {
-            text-decoration: none;
-        }
+        
     </style>
 </head>
 

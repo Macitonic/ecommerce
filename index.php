@@ -168,31 +168,16 @@
     /*====featured products & new arrivals====*/
     .card-container {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       max-width: 1200px;
       width: 100%;
-      margin: 0 3%;
-      padding: 1.5% 0;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.1s ease;
+      padding: 2rem 3%;
+      margin: 0 auto;
     }
 
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1rem;
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 3%;
-      padding: 1.5% 0;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transform: translateY(-5px) scale(1.02);
-    }
 
-    .sec2 {
+    .sect2 {
       margin: 0;
       padding: 0.6rem 3%;
       font-size: 1.4rem;
@@ -290,6 +275,8 @@
       border-radius: 20px 10px 0 0;
     }
 
+    /*ads-section */
+
     .banner {
       max-width: 1200px;
       height: 120px;
@@ -351,7 +338,7 @@
       border-bottom: 1px solid #f39d00;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-10px) scale(1.05);
 
     }
 
@@ -382,6 +369,8 @@
       color: #d41010ff;
 
     }
+
+    /*Testmonials */
 
     .p2 {
       color: #fff;
@@ -445,6 +434,10 @@
       width: 60px;
       height: 60px;
     }
+
+    a {
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -482,7 +475,7 @@
 
   <!--category List-->
   <section>
-    <h2 class="sec2">Choose by Category</h2>
+    <h2 class="sect2">Choose by Category</h2>
     <div class="categories">
       <div><?php include 'categories_tables/laptops.php'; ?></div>
       <div><?php include 'categories_tables/headphones.php'; ?></div>
@@ -493,7 +486,7 @@
 
   <!--Featured Products-->
   <section>
-    <h2 class="sec2">Featured Products</h2>
+    <h2 class="sect2">Featured Products</h2>
 
     <div class="card-container">
       <?php
@@ -520,7 +513,7 @@
 
   <!--New Arrivals-->
   <section id="new-arrivals">
-    <h2 class="sec2">New Arrivals</h2>
+    <h2 class="sect2">New Arrivals</h2>
     <div class="card-container">
       <?php
       $results = $conn->query('SELECT * FROM new_arrivals');

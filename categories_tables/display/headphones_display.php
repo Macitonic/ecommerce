@@ -173,7 +173,7 @@ include '../../db.php';
         ?>
             <div class="headphones-card" style="cursor: pointer;" onclick="location.href='../../details_page.php'">
                 <div class="image">
-                    <img src="https://i.pinimg.com/736x/fd/3f/c7/fd3fc71cf6257839ca007b9c39803aae.jpg" alt="laptop">
+                    <img src="../../<?php echo $row['image']; ?>">
                 </div>
                 <div class="card-content">
                     <h2><?php echo $row['name'] ?></h2>

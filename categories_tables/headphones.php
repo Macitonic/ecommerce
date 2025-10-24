@@ -48,7 +48,7 @@
             font-weight: 700;
         }
 
-        h2 {
+        .card-ct h2 {
             margin: 50% auto;
             font-size: 1.2rem;
         }
@@ -62,7 +62,7 @@
 <body>
     <a href="categories_tables/display/headphones_display.php">
         <div class="headphones-card">
-            <div class="card-content">
+            <div class="card-ct">
                 <h2>Headphones</h2>
             </div>
         </div>

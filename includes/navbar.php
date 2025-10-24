@@ -19,10 +19,10 @@
       <!--Drop-down Menu-->
       <div id="menu">
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="shop.php">Shop</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="/ecommerce/index.php">Home</a></li>
+          <li><a href="/ecommerce/shop.php">Shop</a></li>
+          <li><a href="/ecommerce/about.php">About</a></li>
+          <li><a href="/ecommerce/contact.php">Contact</a></li>
         </ul>
       </div>
 

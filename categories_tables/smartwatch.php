@@ -48,7 +48,7 @@
             font-weight: 700;
         }
 
-        h2 {
+        .card-ct h2 {
             margin: 50% auto;
         }
 
@@ -61,7 +61,7 @@
 <body>
     <a href="categories_tables/display/smartwatch_display.php">
         <div class="smartwatch-card">
-            <div class="card-content">
+            <div class="card-ct">
                 <h2>Watches</h2>
             </div>
         </div>

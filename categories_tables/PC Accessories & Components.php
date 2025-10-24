@@ -47,7 +47,7 @@
             font-weight: 700;
         }
 
-        h2 {
+        .card-ct h2 {
             margin: 50% auto;
             text-align: center;
         }
@@ -61,8 +61,8 @@
 <body>
     <a href="categories_tables/display/pc_display.php">
         <div class="pc-card">
-            <div class="card-content">
-                <h2>PC Accessories & Components</h2>
+            <div class="card-ct">
+                <h2 class="pc-title">PC Accessories & Components</h2>
             </div>
         </div>
     </a>
