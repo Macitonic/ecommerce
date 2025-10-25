@@ -204,10 +204,12 @@
 
         .faq-container h3 {
             font-weight: 500;
+            font-family: var(--font-secondary);
         }
 
         .faq-container p {
             font-weight: 200;
+            --font-primary: "Roboto", sans-serif;
         }
     </style>
 </head>
@@ -224,7 +226,7 @@
         <section class="contact-sec101">
             <div class="get-in-touch">
                 <h2>Get in Touch</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga explicabo minima.</p>
+                <p>Have a question, need help with your order, or want to learn more about our products? We’d love to hear from you. Our team is always ready to assist and ensure you get the best shopping experience possible.</p>
                 <div class="contact-info">
                     <img
                         width="35"
@@ -310,23 +312,23 @@
                 <div class="faq-container">
                     <div class="faq-card-container">
                         <div class="faq-card">
-                            <h3>1. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ea fugit et atque quaerat ipsum voluptas. </p>
+                            <h3>1. How long does delivery take?</h3>
+                            <p>Most orders are delivered within 1–3 business days, depending on your location. You’ll receive tracking details once your package is shipped.</p>
                         </div>
                         <div class="faq-card">
-                            <h3>2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ea fugit et atque quaerat ipsum voluptas. </p>
+                            <h3>2. Can I return or exchange a product?</h3>
+                            <p>Yes, we accept returns and exchanges within 7 days of delivery — as long as the item is unused and in its original packaging. </p>
                         </div>
                     </div>
 
                     <div class="faq-card-container">
                         <div class="faq-card">
-                            <h3>3. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ea fugit et atque quaerat ipsum voluptas. </p>
+                            <h3>3. How can I track my order?</h3>
+                            <p>After placing your order, you’ll receive a tracking link via SMS or email. You can also contact us directly for updates. </p>
                         </div>
                         <div class="faq-card">
-                            <h3>4. Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ea fugit et atque quaerat ipsum voluptas. </p>
+                            <h3>4. Do you offer same-day delivery?</h3>
+                            <p>Yes, same-day delivery is available within select areas in Nairobi and Ongata Rongai. Extra charges may apply based on distance. </p>
                         </div>
                     </div>
 

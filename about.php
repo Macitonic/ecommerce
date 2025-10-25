@@ -76,8 +76,9 @@
         }
 
         .about-hero p {
-            font-size: 1.2rem;
+            font-size: 17px;
             margin: 0;
+            text-align: center;
         }
 
         .story-section {
@@ -157,7 +158,7 @@
         .team-card {
             max-width: 250px;
             width: 100%;
-            height: 400px;
+            height: 450px;
             border: 1px solid #f39d00;
             border-radius: 15px;
             background-color: rgba(22, 7, 7, 0.95);
@@ -177,6 +178,7 @@
             color: #fff;
 
         }
+
 
         .team-card h3 {
             margin-bottom: 3px;
@@ -205,14 +207,14 @@
     <main class="about">
         <section class="about-hero">
             <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cum tenetur</p>
+            <p>At E-commerce254, we’re passionate about making online shopping effortless, enjoyable, and trustworthy. <br> Every product we offer is chosen with care, ensuring our customers always get the best quality and value for their money.</p>
         </section>
 
         <!--Our story section-->
         <section class="story-section">
             <div class="our-story">
                 <h2>Our Story</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores deserunt exercitationem ipsam quas quos a laborum asperiores, possimus minus in qui fugit voluptatem non placeat. Rem provident quia omnis magni?Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt unde eius laborum. Voluptatibus quis animi nobis est impedit ut veritatis mollitia quam suscipit. Incidunt, commodi? Dignissimos quasi impedit officiis tempore.</p>
+                <p>What started as a small idea to make everyday shopping more reliable has grown into a trusted platform serving hundreds of happy customers. Our mission is simple — to connect people with products that make life better. From fast delivery and genuine items to friendly support, everything we do revolves around making sure you shop with confidence. We believe in transparency, quality, and customer happiness — that’s what drives us every single day.</p>
             </div>
             <div class="story-video">
                 <video autoplay muted loop poster="assets/thumbnail.jpg">
@@ -227,22 +229,22 @@
                 <div class="card">
                     <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FAB005/verified-account--v2.png" alt="verified-account--v2" />
                     <h2>Quality</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, perspiciatis aut. Vitae tempora cupiditate ipsam porro, doloribus commodi </p>
+                    <p>We take pride in offering only the best. Every product is tested, reviewed, and verified before reaching your doorstep — because you deserve nothing less than excellence.</p>
                 </div>
                 <div class="card">
                     <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/FAB005/in-transit--v1.png" alt="in-transit--v1" />
                     <h2>Reliable Service</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, perspiciatis aut. Vitae tempora cupiditate ipsam porro, doloribus commodi </p>
+                    <p>From order to delivery, we keep things simple, fast, and transparent. You can count on us for timely updates, smooth transactions, and safe delivery every time.</p>
                 </div>
                 <div class="card">
                     <img width="30" height="30" src="https://img.icons8.com/fluency-systems-filled/48/FAB005/shield.png" alt="shield" />
                     <h2>Customer Trust</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, perspiciatis aut. Vitae tempora cupiditate ipsam porro, doloribus commodi </p>
+                    <p>Your trust is our biggest reward. We’re committed to protecting your data, ensuring secure payments, and offering quick support whenever you need it.</p>
                 </div>
                 <div class="card">
                     <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/FAB005/like--v1.png" alt="like--v1" />
                     <h2>Community Impact</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, perspiciatis aut. Vitae tempora cupiditate ipsam porro, doloribus commodi </p>
+                    <p>We believe in giving back. Our platform supports local suppliers and small businesses, helping communities grow while delivering great value to our customers.</p>
                 </div>
             </div>
         </section>
@@ -256,7 +258,7 @@
                     <div class="team-card-content">
                         <h3>Jane Williams</h3>
                         <h4>Founder & CEO</h4>
-                        <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium at quis </P>
+                        <P>Jane built this brand from the ground up with one goal — to make quality products accessible to everyone. Her vision and leadership continue to shape the customer-first culture that defines us. </P>
                     </div>
 
                 </div>
@@ -265,7 +267,7 @@
                     <div class="team-card-content">
                         <h3>John Smith</h3>
                         <h4>Chief Operations Officer</h4>
-                        <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium at quis excepturi placeat perspiciatis porro</P>
+                        <P>John ensures that every order runs smoothly, from sourcing to delivery. His attention to detail and commitment to excellence make our service as seamless as possible.</P>
                     </div>
 
 
@@ -275,7 +277,7 @@
                     <div class="team-card-content">
                         <h3>Jay Peterson</h3>
                         <h4>Head of production</h4>
-                        <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium at quis excepturi placeat perspiciatis porro</P>
+                        <P>Jay oversees product quality and logistics. He ensures that every item meets our strict standards before it reaches you — consistency and reliability are his priorities.</P>
                     </div>
 
                 </div>
@@ -284,7 +286,7 @@
                     <div class="team-card-content">
                         <h3>Maria Chan</h3>
                         <h4>Chief Technology Officer</h4>
-                        <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium at quis excepturi placeat perspiciatis porro</P>
+                        <P>Maria leads our digital innovation efforts, keeping our systems fast, secure, and user-friendly. Her expertise ensures you enjoy a smooth online shopping experience every time.</P>
                     </div>
 
                 </div>

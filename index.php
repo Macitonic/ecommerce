@@ -438,6 +438,58 @@
     a {
       text-decoration: none;
     }
+
+    @media(max-width:768px) {
+      body {
+        margin: 1%;
+        width: 95%;
+      }
+
+      .hero{
+        padding: 1rem;
+        width: 100%;
+      }
+
+      .categories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+      }
+
+
+
+      .testmonials-cards-container,
+      .ads,
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .card,
+      .testmonials-cards,
+      .categories div {
+        margin: 0;
+        min-width: 360px;
+        width: 100%;
+        min-height: 300px;
+        height: 100%;
+        border-bottom: 1px solid #f39d00;
+        border-radius: 10px;
+      }
+
+       .card, .testmonials-cards, .ad {
+        margin: 10px;
+      }
+
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 
@@ -565,12 +617,12 @@
   <section class="testmonials">
     <div class="testmonials-content">
       <h1>What our customers say about us</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis eligendi voluptas esse sunt Dolorum earum, <br>omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat</p>
+      <p>At our store, we believe shopping should be simple, enjoyable, and trustworthy. <br> Here’s what our customers have to say about their experience with us.</p>
     </div>
     <div class="testmonials-cards-container">
       <div class="testmonials-cards">
         <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
+        <p>“I’ve shopped from many online stores, but this one truly stands out. The products are high quality, exactly as shown, and delivery was faster than I expected. I love how easy it is to find what I need, and the customer support was patient and helpful throughout the process.”</p>
         <div class="customer-info">
           <img src="https://i.pinimg.com/1200x/97/e1/59/97e159c6c2dcb7d9d0c455e1a4e6287d.jpg" alt="Customer" class="customer-image">
           <span class="customer-name">Sarah Johnson</span>
@@ -580,7 +632,7 @@
 
       <div class="testmonials-cards">
         <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
+        <p>“I was amazed by how smooth the whole shopping experience was. From browsing to checkout, everything felt effortless. The packaging was neat, and the product exceeded my expectations. I’ve already recommended this store to my friends and family!”</p>
         <div class="customer-info">
           <img src="https://i.pinimg.com/1200x/3e/f3/50/3ef350dc86cc82a092463e5d795654b5.jpg" alt="customer" class="customer-image">
           <span class="customer-name">Ben Kyle</span>
@@ -589,7 +641,7 @@
       </div>
       <div class="testmonials-cards">
         <img src="assets/five-stars.png" alt="rating" width="80px" height="50px">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum earum, omnis beatae aliquam ipsa ut veniam eius laboriosam, odit ducimus fugiat voluptas commodi dolor maiores eos expedita? Commodi, inventore accusamus.</p>
+        <p>“This store has completely changed how I shop online. The prices are fair, the quality is top-notch, and the team genuinely cares about customer satisfaction. Every order I’ve made has arrived on time, and I can tell they really value their customers.”</p>
         <div class="customer-info">
           <img src="https://i.pinimg.com/736x/b4/1f/db/b41fdb180c124f3f3f8e2791e0019715.jpg" alt="customer" class="customer-image">
           <span class="customer-name">Brian Davis</span>

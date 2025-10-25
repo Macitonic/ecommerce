@@ -51,6 +51,7 @@
         .card-ct h2 {
             margin: 50% auto;
             font-size: 1.2rem;
+            color: rgba(252, 187, 68, 1);
         }
 
         a {
