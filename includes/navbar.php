@@ -35,7 +35,7 @@
             src="https://img.icons8.com/material-two-tone/24/f39d00/search.png"
             alt="search"
         /></a>
-        <a href=""
+        <a href="cart.php"
           ><img
             width="24"
             height="24"

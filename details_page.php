@@ -1,3 +1,39 @@
+<?php
+session_start();
+include 'db.php';
+
+$allowed = ['products', 'featured_products', 'new_arrivals', 'headphones', 'laptops', 'pc', 'watches'];
+
+if (isset($_GET['add'])) {
+    $id = (int)$_GET['add'];
+    $product = null;
+
+
+    foreach ($allowed as $table) {
+
+        $sql = "SELECT * FROM `$table` WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $product = $result->fetch_assoc();
+            $current_table = $table;
+            break;
+        }
+    }
+
+    if (!$product) {
+        echo "<h2>Product not found.</h2>";
+        exit;
+    }
+} else {
+    echo "<h2>No product selected.</h2>";
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,13 +78,13 @@
             font-family: var(--font-secondary);
         }
 
-        section{
+        section {
             opacity: 0;
             transform: translateY(50px);
             transition: all 1s ease;
         }
 
-        section.show{
+        section.show {
             opacity: 1;
             transform: translateY(0);
         }
@@ -170,31 +206,29 @@
     <!--Body-->
     <section class="details_page">
         <div class="image">
-            <img src="https://i.pinimg.com/1200x/b4/35/41/b435417369a997ec8b58550f9545c44f.jpg" alt="watch example">
+            <img src="<?php echo $product['image']; ?>" alt="<?php echo ($product['name']); ?>">
         </div>
         <div class="info-card">
-            <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab corporis aliquid.</h3>
-            <p style="font-weight: 600;">ksh.20,000</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <h3><?php echo ($product['name']); ?></h3>
+            <p style="font-weight: 600;">ksh.<?php echo $product['price']; ?></p>
+            <p><?php echo ($product['description']); ?></p>
             <div class="btns">
-                <button class="btn1">Add to cart</button>
-                <button class="btn2">Buy Now</button>
-            </div>
+                <button type="button" class="btn1" style="cursor: pointer;" onclick="location.href='cart.php?add_type=<?php echo $current_table?>&add_id=<?php echo $product['id'];  ?>'">Add To Cart</button>
+                <button type="button" class="btn2"style="cursor: pointer;" onclick="location.href='checkout.php'">Buy Now</button>
+            </button>
         </div>
     </section>
 
     <section class="description">
         <div class="description-titles">
             <h3>Product Description</h3>
-            <h3>Specifications</h3>
         </div>
         <hr>
         <div class="description-content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quos reiciendis ut, labore enim sapiente impedit nihil quod accusamus nobis? Ad mollitia optio libero harum a blanditiis aperiam illum eaque!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem at ducimus, impedit earum minima, sapiente nam tenetur quos libero fuga, dolores alias suscipit reprehenderit molestiae. Enim alias facilis sunt omnis.</p>
+            <p><?php echo ($product['description']); ?></p>
         </div>
     </section>
+
 
     <!--Footer-->
     <?php include 'includes/footer.php'; ?>

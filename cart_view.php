@@ -221,7 +221,7 @@
         <?php foreach ($cart_items as $item): ?>
           <div class="card-container">
             <div class="left-card">
-              <img src="https://i.pinimg.com/1200x/25/d7/a1/25d7a165da71b020112b4972c821ed4a.jpg" width="110px" height="120px" alt="">
+              <img src="<?= $item['image']?>" width="110px" height="120px" alt="">
               <div class="card-title">
                 <h2><?= $item['name'] ?></h2>
               </div>

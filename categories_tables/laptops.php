@@ -8,8 +8,8 @@
     <style>
         .laptop-card {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/1200x/f5/ce/07/f5ce078e5112d477ba9edfbcc53d7870.jpg") no-repeat center/cover;
-            width: 190px;
-            height: 250px;
+            width: 250px;
+            height: 280px;
             border: 1px solid transparent;
             border-radius: 15px;
             box-shadow: 1px 1px 1.8px grey, -1px -1px 1.8px grey;
@@ -18,12 +18,12 @@
 
         .laptop-card:hover {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/1200x/f5/ce/07/f5ce078e5112d477ba9edfbcc53d7870.jpg") no-repeat center/cover;
-            width: 192px;
-            height: 252px;
+            width: 252px;
+            height: 282px;
             border: 1px solid transparent;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px) scale(1.02);
+            transform: translateY(-5px) scale(1.05);
 
         }
 
