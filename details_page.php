@@ -3,35 +3,36 @@ session_start();
 include 'db.php';
 
 $allowed = ['products', 'featured_products', 'new_arrivals', 'headphones', 'laptops', 'pc', 'watches'];
+$product = null;
 
-if (isset($_GET['add'])) {
+if (isset($_GET['add'], $_GET['add_type'])) {
     $id = (int)$_GET['add'];
-    $product = null;
+    $table = $_GET['add_type'];
 
 
-    foreach ($allowed as $table) {
-
+    if (in_array($table, $allowed, true)) {
         $sql = "SELECT * FROM `$table` WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
 
-        if ($result->num_rows > 0) {
-            $product = $result->fetch_assoc();
-            $current_table = $table;
-            break;
+        if ($stmt) {
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                $product = $result->fetch_assoc();
+                $current_table = $table;
+            }
+            $stmt->close();
+        } else{
+            die("Error preparing statement: " . $conn->error);
         }
-    }
-
-    if (!$product) {
-        echo "<h2>Product not found.</h2>";
+    } else {
+        echo "<h1>Invalid table</h1>"; 
         exit;
     }
-} else {
-    echo "<h2>No product selected.</h2>";
-    exit;
 }
+
 ?>
 
 <!DOCTYPE html>

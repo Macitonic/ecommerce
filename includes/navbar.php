@@ -13,7 +13,7 @@
 
       <!--Logo-->
       <div class="logo">
-        <a href="#"><img src="assets/e-commerce254.png" alt="logo" /></a>
+        <a href="/ecommerce/index.php"><img src="/ecommerce/assets/e-commerce254.png" alt="logo" /></a>
       </div>
 
       <!--Drop-down Menu-->
@@ -35,7 +35,7 @@
             src="https://img.icons8.com/material-two-tone/24/f39d00/search.png"
             alt="search"
         /></a>
-        <a href="cart.php"
+        <a href="/ecommerce/cart.php"
           ><img
             width="24"
             height="24"

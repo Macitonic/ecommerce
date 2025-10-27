@@ -805,7 +805,7 @@
       $results = $conn->query('SELECT * FROM featured_products');
       while ($row = $results->fetch_assoc()) {
       ?>
-        <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add=<?php echo $row['id'];  ?>'">
+        <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add_type=featured_products&add=<?php echo $row['id'];  ?>'">
           <div class="image">
             <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
           </div>
@@ -831,7 +831,7 @@
       $results = $conn->query('SELECT * FROM new_arrivals');
       while ($row = $results->fetch_assoc()) {
       ?>
-        <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add=<?php echo $row['id'];  ?>'">
+        <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add_type=new_arrivals&add=<?php echo $row['id'];  ?>'">
           <div class="image">
             <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
           </div>

@@ -383,7 +383,7 @@ include 'db.php';
                 $results = $conn->query('SELECT * FROM products');
                 while ($row = $results->fetch_assoc()) {
                 ?>
-                    <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add=<?php echo $row['id'];  ?>'">
+                    <div class="card" style="cursor: pointer;" onclick="location.href='details_page.php?add_type=products&add=<?php echo $row['id'];  ?>'">
                         <div class="image">
                             <img src="<?php echo $row['image']; ?>" style="height:200px; object-fit:cover;">
                         </div>

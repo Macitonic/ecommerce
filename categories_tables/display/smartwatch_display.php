@@ -328,7 +328,7 @@ include '../../db.php';
         $results = $conn->query('SELECT * FROM watches');
         while ($row = $results->fetch_assoc()) {
         ?>
-            <div class="smartwatch-card" style="cursor: pointer; " onclick="location.href='../../details_page.php?add=<?php echo $row['id'];  ?>'">
+            <div class="smartwatch-card" style="cursor: pointer; " onclick="location.href='../../details_page.php?add_type=watches&add=<?php echo $row['id'];  ?>'">
                 <div class="image">
                     <img src="../../<?php echo $row['image']; ?>" alt="laptop">
                 </div>
